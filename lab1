@@ -1,0 +1,15 @@
+<!DOCTYPE htm1>
+<html>
+	<head>
+		<title> Моя страничка </title>
+		<link rel="stylesheet" href="mycss.css">
+		<link rel="shortcut icon" href="favicon.ico">
+	</head>
+	<body>
+		<div class="mydiv1">
+			<?php
+				echo "<h1>средняя линия трапеции с основаниями 12 и 18 равняется  ", (12 + 18)/ 2;"</h1>"
+			?>
+		</div>
+	</body>
+</html>
