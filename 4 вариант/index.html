@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Лабораторная работа №4</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Поиск" aria-label="Поиск">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+     Begin page content
+    <main role="main" class="container" style="padding-top:3rem">
+        <h1 class="mt-5">Вычислить площадь треугольника со сторонами A, B, C и определить, является ли треугольник равнобедренным.</h1>
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="sideA">Введите сторону a</label>
+                <input type="text" class="sideA" id="sideA" placeholder="Введите значение a" name="sideA">
+            </div>
+            <div class="form-group">
+                <label for="sideB">Введите сторону b</label>
+                <input type="text" class="sideB" id="sideB" placeholder="Введите значение b" name="sideB">
+            </div>
+            <div class="form-group">
+                <label for="sideC">Введите сторону c</label>
+                <input type="text" class="sideC" id="sideC" placeholder="Введите значение c" name="sideC">
+            </div>
+            <!--<button type="submit" class="btn btn-primary"></button> -->
+            <button type="button" id="revers" class="btn1">Вычислить</button>
+            
+        </form>
+    </main>
+    <footer class="footer">
+    </footer>
+    <script>
+                document.querySelector('.btn1').onclick = myClck;
+
+                function myClck() {
+                    let a = parseInt(document.querySelector('.sideA').value);
+                    let b = parseInt(document.querySelector('.sideB').value);
+                    let c = parseInt(document.querySelector('.sideC').value);
+                    var p = (a + b + c) / 2;
+                    let S = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+                    window.alert(S)
+
+                    if (a == b && c == b) {
+                        window.alert("Треугольник не равнобедренный");
+                    }
+                    else if (a == b ) {
+                        window.alert("Треугольник равнобедренный");
+                    } else if (a == c) {
+                        window.alert("Треугольник равнобедренный");
+                    }
+                    else if (b == c) {
+                        window.alert("Треугольник равнобедренный");
+                    } else {
+                        window.alert("Треугольник не равнобедренный");
+                    }
+                }
+            </script>
+</body>
+</html>
